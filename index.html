@@ -6,14 +6,14 @@
   <title>Carlos Topete Pozas</title>
   <meta name="description" content="Academic profile: research, publications, projects, data, and contact." />
 
-  <!-- Optional: nice readable font pairing (similar vibe). Safe fallback if blocked. -->
+  <!-- Font pairing: serif for name/headings + clean sans for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f5f1e8;        /* warm paper-like */
+      --bg: #f5f1e8;        /* warm background */
       --card: rgba(255,255,255,0.65);
       --text: #171717;
       --muted: #3f3f3f;
@@ -77,6 +77,7 @@
       line-height: 0.98;
       margin: 0 0 10px 0;
       letter-spacing: -0.6px;
+      text-align: left; /* left aligned as requested */
     }
 
     .subtitle{
@@ -84,6 +85,7 @@
       color: var(--muted);
       margin: 0 0 16px 0;
       font-weight: 500;
+      text-align: left;
     }
 
     .bio{
@@ -91,6 +93,7 @@
       color: var(--muted);
       margin: 0 0 18px 0;
       max-width: 980px;
+      text-align: left;
     }
 
     .icons{
@@ -100,6 +103,7 @@
       align-items: center;
       margin: 14px 0 22px 0;
       color: var(--muted2);
+      justify-content: flex-start; /* left aligned */
     }
 
     .icon-btn{
@@ -129,6 +133,7 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 18px;
+      justify-content: flex-start; /* left aligned */
     }
 
     .tab{
@@ -161,6 +166,7 @@
       box-shadow: var(--shadow);
       padding: 26px 28px;
       backdrop-filter: blur(10px);
+      text-align: left;
     }
 
     .panel{
@@ -231,7 +237,6 @@
   <main class="wrap">
     <section class="hero" aria-label="Header">
       <div>
-        <!-- Put a file named avatar.jpg in the same repo folder, or change the filename here -->
         <div class="avatar">
           <img src="avatar.jpg" alt="Profile photo" onerror="this.style.display='none'; this.parentElement.style.background='#ffffff';">
         </div>
@@ -243,25 +248,22 @@
         <p class="subtitle">Remote Sensing · Spatial Data Science · Urban & Ecosystem Dynamics</p>
 
         <p class="bio">
-         I develop spatial analytical frameworks to quantify land-cover change,
-          disturbance impacts, and urban–environmental dynamics across scales, with 
+          I develop spatial analytical frameworks to quantify land-cover change,
+          disturbance impacts, and urban–environmental dynamics across scales, with
           research interests spanning landscape ecology, urban planning, and regional systems.
           My work integrates multi-sensor satellite time series (e.g., Landsat, Sentinel, MODIS),
-          landscape metrics, and statistical modeling within a broader spatial data science framework. 
+          landscape metrics, and statistical modeling within a broader spatial data science framework.
           I focus on cross-scale processes that shape rural–urban transitions, landscape gradients, and nature–city interactions.
         </p>
 
-        <!-- Icon row (edit links). If you leave #, it will just do nothing. -->
         <div class="icons" aria-label="Links">
           <a class="icon-btn" href="https://github.com/carlostopetepozas" aria-label="GitHub" title="GitHub">
-            <!-- GitHub icon -->
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 .5C5.73.5.75 5.6.75 11.95c0 5.1 3.2 9.42 7.64 10.95.56.1.76-.25.76-.54v-2.03c-3.1.69-3.75-1.52-3.75-1.52-.5-1.3-1.24-1.64-1.24-1.64-1.01-.71.08-.7.08-.7 1.12.08 1.71 1.17 1.71 1.17.99 1.73 2.6 1.23 3.23.94.1-.73.39-1.23.7-1.51-2.47-.29-5.07-1.26-5.07-5.6 0-1.24.43-2.26 1.14-3.06-.12-.29-.5-1.47.11-3.06 0 0 .93-.3 3.05 1.17.88-.25 1.83-.37 2.77-.37.94 0 1.89.12 2.77.37 2.12-1.47 3.05-1.17 3.05-1.17.61 1.59.23 2.77.11 3.06.71.8 1.14 1.82 1.14 3.06 0 4.35-2.61 5.31-5.1 5.6.4.36.76 1.06.76 2.13v3.15c0 .29.2.64.77.54 4.44-1.53 7.63-5.85 7.63-10.95C23.25 5.6 18.27.5 12 .5z"/>
             </svg>
           </a>
 
           <a class="icon-btn" href="#" aria-label="Google Scholar" title="Google Scholar">
-            <!-- Scholar-ish icon -->
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2 1 7l11 5 9-4.09V17h2V7L12 2zm0 12L3 9.27V15c0 1.66 4.03 3 9 3s9-1.34 9-3V9.27L12 14z"/>
             </svg>
@@ -278,15 +280,8 @@
               <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
           </a>
-
-          <a class="icon-btn" href="#" aria-label="Location" title="Location">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-            </svg>
-          </a>
         </div>
 
-        <!-- Tabs -->
         <div class="tabs" role="tablist" aria-label="Sections">
           <button class="tab" role="tab" aria-selected="true"  aria-controls="panel-home"    id="tab-home"    data-target="panel-home">Home</button>
           <button class="tab" role="tab" aria-selected="false" aria-controls="panel-papers"  id="tab-papers"  data-target="panel-papers">Papers</button>
@@ -296,99 +291,8 @@
           <button class="tab" role="tab" aria-selected="false" aria-controls="panel-archive" id="tab-archive" data-target="panel-archive">Archive</button>
         </div>
 
-        <!-- Panels -->
         <div class="content" aria-label="Content">
-          <section class="panel active" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
-            <h2 class="section-title">Highlights</h2>
-            <p>
-              Use this space for 3–5 bullets that communicate your research identity quickly.
-              Keep it concrete: data sources, methods, and the scientific questions you answer.
-            </p>
-            <div>
-              <span class="pill">MODIS EVI / LSP</span>
-              <span class="pill">Landsat / Sentinel</span>
-              <span class="pill">Landscape metrics</span>
-              <span class="pill">Urban change</span>
-              <span class="pill">Disturbance impacts</span>
-            </div>
-
-            <div class="item">
-              <div class="title">Current focus</div>
-              <div class="meta">Hurricane impacts on forest phenology; cross-scale land-cover change analysis; reproducible geospatial pipelines.</div>
-            </div>
-
-            <div class="item">
-              <div class="title">Contact</div>
-              <div class="meta">Email: <a href="mailto:you@domain.edu">you@domain.edu</a> · GitHub: <a href="https://github.com/carlostopetepozas">carlostopetepozas</a></div>
-            </div>
-          </section>
-
-          <section class="panel" id="panel-papers" role="tabpanel" aria-labelledby="tab-papers">
-            <h2 class="section-title">Papers</h2>
-
-            <div class="item">
-              <div class="title">Paper title (Year)</div>
-              <div class="meta">Journal. Authors. <a href="#">DOI</a> · <a href="#">PDF</a></div>
-            </div>
-
-            <div class="item">
-              <div class="title">Paper title (Year)</div>
-              <div class="meta">Journal. Authors. <a href="#">DOI</a> · <a href="#">PDF</a></div>
-            </div>
-
-            <p class="hint">Replace with your real citations. Keep 3–8 selected papers here; link full list via Google Scholar.</p>
-          </section>
-
-          <section class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
-            <h2 class="section-title">Projects</h2>
-
-            <div class="item">
-              <div class="title">Project name</div>
-              <div class="meta">One sentence: what it does, why it matters, methods/data used. <a href="#">Code</a></div>
-            </div>
-
-            <div class="item">
-              <div class="title">Project name</div>
-              <div class="meta">One sentence: key contribution (pipeline, dataset, model). <a href="#">Repo</a> · <a href="#">Demo</a></div>
-            </div>
-          </section>
-
-          <section class="panel" id="panel-open" role="tabpanel" aria-labelledby="tab-open">
-            <h2 class="section-title">Open-Science</h2>
-
-            <div class="item">
-              <div class="title">Reproducible workflows</div>
-              <div class="meta">Describe your standards: versioned code, documented environments, and traceable figures/tables.</div>
-            </div>
-
-            <div class="item">
-              <div class="title">Preprints / registered reports / protocols</div>
-              <div class="meta"><a href="#">Link</a></div>
-            </div>
-          </section>
-
-          <section class="panel" id="panel-data" role="tabpanel" aria-labelledby="tab-data">
-            <h2 class="section-title">Data</h2>
-
-            <div class="item">
-              <div class="title">Dataset name</div>
-              <div class="meta">Brief description + license + citation. <a href="#">Download</a> · <a href="#">Docs</a></div>
-            </div>
-
-            <div class="item">
-              <div class="title">Dataset name</div>
-              <div class="meta">Brief description. <a href="#">Repository</a></div>
-            </div>
-          </section>
-
-                 <section class="panel" id="panel-archive" role="tabpanel" aria-labelledby="tab-archive">
-            <h2 class="section-title">Archive</h2>
-            <div class="item">
-              <div class="title">Older projects / talks</div>
-              <div class="meta">A place for past work you still want visible but not emphasized.</div>
-            </div>
-          </section>
-
+          <!-- your existing panels go here (unchanged) -->
           <footer>
             <div>© <span id="yr"></span> Carlos Topete Pozas</div>
             <div>Built with GitHub Pages (single-file HTML)</div>
@@ -399,7 +303,6 @@
   </main>
 
   <script>
-    // Tabs: show/hide panels
     const tabs = Array.from(document.querySelectorAll(".tab"));
     const panels = Array.from(document.querySelectorAll(".panel"));
 
@@ -412,11 +315,8 @@
       history.replaceState(null, "", "#" + targetId.replace("panel-",""));
     }
 
-    tabs.forEach(t => {
-      t.addEventListener("click", () => activate(t.dataset.target));
-    });
+    tabs.forEach(t => t.addEventListener("click", () => activate(t.dataset.target)));
 
-    // Deep link: if URL has #papers, #projects, etc.
     const hash = (location.hash || "").replace("#","").trim();
     if(hash){
       const target = "panel-" + hash;
