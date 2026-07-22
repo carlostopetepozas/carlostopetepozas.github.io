@@ -329,19 +329,74 @@ footer{
 </main>
 
 <script>
+<script>
 const tabs = document.querySelectorAll(".tab");
 const panels = document.querySelectorAll(".panel");
 
-tabs.forEach(tab=>{
-  tab.addEventListener("click",()=>{
-    tabs.forEach(t=>t.setAttribute("aria-selected","false"));
-    tab.setAttribute("aria-selected","true");
-    panels.forEach(p=>p.classList.remove("active"));
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.setAttribute("aria-selected", "false"));
+    tab.setAttribute("aria-selected", "true");
+    panels.forEach(p => p.classList.remove("active"));
     document.getElementById(tab.dataset.target).classList.add("active");
   });
 });
 
-document.getElementById("yr").textContent = new Date().getFullYear();
+
+const bannerSlides = [
+  {
+    image: "banner1_CDMX_2020_2.jpeg",
+    title: "Urban-to-Rural Spatiotemporal Land-Cover Change",
+    note: "Sentinel-2, July 2020, Mexico City Metropolitan Area"
+  },
+  {
+    image: "banner2.jpeg",
+    title: "Forest and Landscape Dynamics",
+    note: "Description of the second banner"
+  },
+  {
+    image: "banner3.jpeg",
+    title: "Data Analysis and Visualization",
+    note: "Spatial data science and reproducible analytical workflows"
+  }
+];
+
+const bannerElement = document.querySelector(".banner");
+const bannerTitle = document.querySelector(".banner-title");
+const bannerNote = document.querySelector(".banner-note");
+
+let currentBanner = 0;
+
+function showBanner() {
+  const slide = bannerSlides[currentBanner];
+
+  bannerElement.style.backgroundImage = `
+    linear-gradient(
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.48)
+    ),
+    url("${slide.image}")
+  `;
+
+  bannerTitle.textContent = slide.title;
+  bannerNote.textContent = slide.note;
+}
+
+bannerSlides.forEach(slide => {
+  const image = new Image();
+  image.src = slide.image;
+});
+
+showBanner();
+
+setInterval(() => {
+  currentBanner = (currentBanner + 1) % bannerSlides.length;
+  showBanner();
+}, 5000);
+
+document.getElementById("yr").textContent =
+  new Date().getFullYear();
+</script>
 </script>
 
 </body>
