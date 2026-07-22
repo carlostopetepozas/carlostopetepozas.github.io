@@ -327,9 +327,6 @@ footer{
 
 </section>
 </main>
-
-<script>
-<script>
 <script>
 const tabs = document.querySelectorAll(".tab");
 const panels = document.querySelectorAll(".panel");
@@ -342,7 +339,6 @@ tabs.forEach(tab => {
     document.getElementById(tab.dataset.target).classList.add("active");
   });
 });
-
 
 /* Rotating banners */
 const bannerSlides = [
@@ -384,27 +380,19 @@ function showBanner() {
   bannerNote.textContent = slide.note;
 }
 
-
-/* Preload all banner images */
 bannerSlides.forEach(slide => {
   const image = new Image();
   image.src = slide.image;
 });
 
-
-/* Show the first banner immediately */
 showBanner();
 
-
-/* Change banner every five seconds */
 setInterval(() => {
   currentBanner = (currentBanner + 1) % bannerSlides.length;
   showBanner();
 }, 5000);
 
-
-document.getElementById("yr").textContent =
-  new Date().getFullYear(); 
+document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
