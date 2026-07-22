@@ -330,6 +330,7 @@ footer{
 
 <script>
 <script>
+<script>
 const tabs = document.querySelectorAll(".tab");
 const panels = document.querySelectorAll(".panel");
 
@@ -343,6 +344,7 @@ tabs.forEach(tab => {
 });
 
 
+/* Rotating banners */
 const bannerSlides = [
   {
     image: "banner1_CDMX_2020_2.jpeg",
@@ -350,14 +352,14 @@ const bannerSlides = [
     note: "Sentinel-2, July 2020, Mexico City Metropolitan Area"
   },
   {
-    image: "banner2.jpeg",
-    title: "Forest and Landscape Dynamics",
-    note: "Description of the second banner"
+    image: "banner2_MappingHurricanes2.jpeg",
+    title: "Mapping Hurricane Impacts on Forests",
+    note: "Remote sensing of forest disturbance and recovery"
   },
   {
-    image: "banner3.jpeg",
+    image: "banner3_Boxplots_analitycs.jpeg",
     title: "Data Analysis and Visualization",
-    note: "Spatial data science and reproducible analytical workflows"
+    note: "Spatial data analysis, statistical modeling, and visualization"
   }
 ];
 
@@ -382,22 +384,27 @@ function showBanner() {
   bannerNote.textContent = slide.note;
 }
 
+
+/* Preload all banner images */
 bannerSlides.forEach(slide => {
   const image = new Image();
   image.src = slide.image;
 });
 
+
+/* Show the first banner immediately */
 showBanner();
 
+
+/* Change banner every five seconds */
 setInterval(() => {
   currentBanner = (currentBanner + 1) % bannerSlides.length;
   showBanner();
 }, 5000);
 
+
 document.getElementById("yr").textContent =
   new Date().getFullYear();
 </script>
-</script>
-
 </body>
 </html>
