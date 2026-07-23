@@ -270,7 +270,7 @@ footer{
 <main class="wrap">
 <div class="tabs" role="tablist">
     <button class="tab" aria-selected="true" data-target="home">Home</button>
-    <button class="tab" data-target="papers">Papers</button>
+    <a class="tab" href="/publications/">Publications</a>
     <button class="tab" data-target="projects">Projects</button>
     <button class="tab" data-target="open">Open-Science</button>
     <button class="tab" data-target="data">Data</button>
@@ -319,11 +319,7 @@ footer{
       <p>Current focus: hurricane impacts, cross-scale land-cover change, reproducible geospatial pipelines.</p>
     </section>
 
-    <section class="panel" id="papers">
-      <h2 class="section-title">Papers</h2>
-      <div class="item">Paper title — Journal (Year)</div>
-    </section>
-
+    
     <section class="panel" id="projects">
       <h2 class="section-title">Projects</h2>
       <div class="item">Project name — short description.</div>
@@ -352,7 +348,7 @@ footer{
 </section>
 </main>
 <script>
-const tabs = document.querySelectorAll(".tab");
+const tabs = document.querySelectorAll("button.tab[data-target]");
 const panels = document.querySelectorAll(".panel");
 
 tabs.forEach(tab => {
@@ -363,7 +359,17 @@ tabs.forEach(tab => {
     document.getElementById(tab.dataset.target).classList.add("active");
   });
 });
+const requestedPanel = window.location.hash.slice(1);
 
+if (requestedPanel) {
+  const requestedTab = document.querySelector(
+    `button.tab[data-target="${requestedPanel}"]`
+  );
+
+  if (requestedTab) {
+    requestedTab.click();
+  }
+}
 /* Rotating banners */
 const bannerSlides = [
   {
