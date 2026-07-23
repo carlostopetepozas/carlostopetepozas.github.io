@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Publications | Carlos Topete Pozas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+:root{
+  --bg: #f7f7f7;
+  --card: rgba(255,255,255,0.7);
+  --text: #171717;
+  --muted: #4a4a4a;
+  --muted2: #6b6b6b;
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 18px 45px rgba(0,0,0,0.08);
+  --tab: rgba(0,0,0,0.06);
+  --tabActive: rgba(0,0,0,0.10);
+  --link: #1a4f8b;
+  --maxw: 1100px;
+  --radius: 18px;
+}
+
+html,
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 30px 20px 100px;
+}
+
+/* Navigation */
+
+.tabs{
+  margin: 0 0 34px 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tab{
+  border: none;
+  background: var(--tab);
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab:hover,
+.tab.current{
+  background: var(--tabActive);
+}
+
+/* Name and profile image */
+
+.top-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.name{
+  margin: 0;
+
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+}
+
+.degree{
+  margin-left: 8px;
+  color: var(--muted2);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Publications heading */
+
+.page-header{
+  margin-bottom: 28px;
+}
+
+.page-title{
+  margin: 0 0 6px 0;
+
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+}
+
+.page-intro{
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* Publication groups */
+
+.publications-card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.publication-group{
+  margin-top: 42px;
+}
+
+.publication-group:first-child{
+  margin-top: 0;
+}
+
+.group-title{
+  margin: 0 0 4px 0;
+
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.group-subtitle{
+  margin: 0 0 14px 0;
+
+  color: var(--muted2);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* Individual publications */
+
+.publication{
+  padding: 21px 0;
+  border-top: 1px solid var(--border);
+}
+
+.publication:first-of-type{
+  border-top: none;
+}
+
+.publication-title{
+  margin: 0 0 6px 0;
+
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.publication-title a{
+  color: var(--link);
+  text-decoration: none;
+}
+
+.publication-title a:hover{
+  text-decoration: underline;
+}
+
+.publication-authors{
+  margin: 0 0 3px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.publication-venue{
+  margin: 0;
+  color: var(--muted2);
+  font-size: 15px;
+}
+
+.feature-label{
+  display: inline-block;
+  margin-left: 7px;
+  padding: 2px 7px;
+
+  background: var(--tab);
+  border-radius: 5px;
+
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.working-title{
+  color: var(--text);
+}
+
+footer{
+  margin-top: 30px;
+  color: var(--muted2);
+  font-size: 14px;
+}
+
+@media (max-width: 700px){
+
+  .top-header{
+    gap: 18px;
+  }
+
+  .avatar{
+    width: 92px;
+    height: 92px;
+  }
+
+  .publications-card{
+    padding: 22px 20px;
+  }
+
+  .publication-title{
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="wrap">
+
+  <!-- Navigation -->
+
+  <nav class="tabs" aria-label="Primary navigation">
+
+    <a class="tab" href="/">
+      Home
+    </a>
+
+    <a
+      class="tab current"
+      href="/publications/"
+      aria-current="page"
+    >
+      Publications
+    </a>
+
+    <a class="tab" href="/#projects">
+      Projects
+    </a>
+
+    <a class="tab" href="/#open">
+      Open-Science
+    </a>
+
+    <a class="tab" href="/#data">
+      Data
+    </a>
+
+    <a class="tab" href="/#archive">
+      Archive
+    </a>
+
+  </nav>
+
+  <!-- Name and photograph -->
+
+  <header class="top-header">
+
+    <h1 class="name">
+      Carlos Topete Pozas
+      <span class="degree">Ph.D.</span>
+    </h1>
+
+    <div class="avatar">
+      <img
+        src="/CarlosT_Foto_2026.jpeg"
+        alt="Profile photograph of Carlos Topete Pozas"
+      >
+    </div>
+
+  </header>
+
+  <!-- Page title -->
+
+  <header class="page-header">
+
+    <h2 class="page-title">
+      Publications
+    </h2>
+
+    <p class="page-intro">
+      Peer-reviewed articles, book chapters, and research in progress.
+      Publication titles link directly to the corresponding articles or records.
+    </p>
+
+  </header>
+
+  <!-- Publication list -->
+
+  <section class="publications-card">
+
+    <!-- Articles -->
+
+    <section class="publication-group">
+
+      <h2 class="group-title">
+        Articles
+      </h2>
+
+      <article class="publication">
+
+        <h3 class="publication-title">
+          <a
+            href="https://doi.org/10.3390/f17040419"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Land Surface Phenology Reveals Region-Specific Hurricane
+            Impacts Across the North Atlantic Basin (2001–2022)
+          </a>
+
+          <span class="feature-label">
+            Feature Paper
+          </span>
+        </h3>
+
+        <p class="publication-authors">
+          Topete-Pozas, C., &amp; Norman, S. P. (2026).
+        </p>
+
+        <p class="publication-venue">
+          <em>Forests, 17</em>(4), 419.
+        </p>
+
+      </article>
+
+
+      <article class="publication">
+
+        <h3 class="publication-title">
+          <a
+            href="https://doi.org/10.3390/rs16203890"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Multi-Year Hurricane Impacts Across an Urban-to-Industrial
+            Forest Use Gradient
+          </a>
+        </h3>
+
+        <p class="publication-authors">
+          Topete-Pozas, C., Norman, S. P., &amp; Christie, W. M. (2024).
+        </p>
+
+        <p class="publication-venue">
+          <em>Remote Sensing, 16</em>(20), 3890.
+        </p>
+
+      </article>
+
+
+      <article class="publication">
+
+        <h3 class="publication-title">
+          <a
+            href="https://www.researchgate.net/publication/318759352_Urbanizacion_periferica_y_su_efecto_ambiental_El_caso_de_las_barrancas_de_Cuajimalpa_Ciudad_de_Mexico_Peripheral_Urbanization_and_its_Environmental_Effect_The_Case_of_Cuajimalpa_Ravines_Mexico_City"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Urbanización periférica y su efecto ambiental: El caso de
+            las barrancas de Cuajimalpa, Ciudad de México
+          </a>
+        </h3>
+
+        <p class="publication-authors">
+          Topete Pozas, Carlos. (2017).
+        </p>
+
+        <p class="publication-venue">
+          <em>Anuario del Posgrado de Urbanismo</em>, primera época,
+          4(4), 87–112. UNAM. ISSN 2448-6744.
+        </p>
+
+      </article>
+
+    </section>
+
+
+    <!-- Book chapters -->
+
+    <section class="publication-group">
+
+      <h2 class="group-title">
+        Book Chapters
+      </h2>
+
+      <article class="publication">
+
+        <h3 class="publication-title">
+          <a
+            href="https://www.researchgate.net/publication/318388311_Colonia_Los_Alamos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Colonia Los Álamos
+          </a>
+        </h3>
+
+        <p class="publication-authors">
+          Topete Pozas, Carlos. (2013).
+        </p>
+
+        <p class="publication-venue">
+          In E. Ayala Alonso &amp; G. Alvarez Montes,
+          <em>
+            El espacio habitacional en la arquitectura moderna:
+            Colonias, fraccionamientos, unidades habitacionales,
+            equipamiento urbano y protagonistas
+          </em>.
+          UAM-Xochimilco. ISBN 978-607-28-0044-1.
+        </p>
+
+      </article>
+
+
+      <article class="publication">
+
+        <h3 class="publication-title">
+          <a
+            href="https://www.researchgate.net/publication/318381346_Aproximacion_al_estudio_de_la_forma_urbana_de_la_ciudad_de_Mexico_El_caso_de_Santa_Maria_la_Ribera"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Aproximación al estudio de la forma urbana de la Ciudad
+            de México: El caso de Santa María la Ribera
+          </a>
+        </h3>
+
+        <p class="publication-authors">
+          Topete Pozas, Carlos. (2012).
+        </p>
+
+        <p class="publication-venue">
+          In H. de Gortari (Ed.),
+          <em>
+            Morfología de la Ciudad de México: El catastro de fines
+            del siglo XIX y de 2000. Estudios de caso
+          </em>.
+          UNAM-IIS. ISBN 978-607-02-3443-9.
+        </p>
+
+      </article>
+
+    </section>
+
+
+    <!-- Work in progress -->
+
+    <section class="publication-group">
+
+      <h2 class="group-title">
+        Work in Progress
+      </h2>
+
+      <p class="group-subtitle">
+        Working Papers
+      </p>
+
+      <article class="publication">
+
+        <h3 class="publication-title working-title">
+          Divergent Spatial Patterns of Land-Cover Change Across a
+          Conservation-to-Metropolitan Gradient in the Mexico City
+          Metropolitan Area
+        </h3>
+
+        <p class="publication-authors">
+          Topete-Pozas, C., Gutierrez-Velez, V. H.,
+          Lara, W. H., &amp; Rosan, C. (2026).
+        </p>
+
+        <p class="publication-venue">
+          Manuscript in preparation.
+        </p>
+
+      </article>
+
+    </section>
+
+  </section>
+
+  <footer>
+    © <span id="yr"></span> Carlos Topete Pozas
+  </footer>
+
+</main>
+
+<script>
+document.getElementById("yr").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
