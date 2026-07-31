@@ -160,6 +160,23 @@ h1{
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
+  /* Full static banner displayed in the Projects tab */
+
+.banner.project-banner{
+  min-height: 0;
+  aspect-ratio: 5 / 2;
+  padding: 0;
+
+  background-color: #fff;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner.project-banner .banner-title,
+.banner.project-banner .banner-note{
+  display: none;
+}
 .icons{
   margin-top: 20px;
   display: flex;
@@ -394,13 +411,25 @@ footer{
 <script>
 const tabs = document.querySelectorAll("button.tab[data-target]");
 const panels = document.querySelectorAll(".panel");
+  const bio = document.querySelector(".bio");
+const homeBio = bio.innerHTML;
 
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
     tabs.forEach(t => t.setAttribute("aria-selected", "false"));
     tab.setAttribute("aria-selected", "true");
+
     panels.forEach(p => p.classList.remove("active"));
-    document.getElementById(tab.dataset.target).classList.add("active");
+    document
+      .getElementById(tab.dataset.target)
+      .classList.add("active");
+
+    if (tab.dataset.target === "projects") {
+      bio.textContent =
+        "Here you can explore selected projects developed during my work as a consultant.";
+    } else {
+      bio.innerHTML = homeBio;
+    }
   });
 });
 const requestedPanel = window.location.hash.slice(1);
@@ -441,10 +470,27 @@ const bannerSlides = [
 const bannerElement = document.querySelector(".banner");
 const bannerTitle = document.querySelector(".banner-title");
 const bannerNote = document.querySelector(".banner-note");
+function showProjectBanner() {
+  bannerElement.classList.add("project-banner");
 
+  bannerElement.style.backgroundImage =
+    'url("banner5_ORU.jpeg")';
+}
 let currentBanner = 0;
 
 function showBanner() {
+  bannerElement.classList.remove("project-banner");
+
+  tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    if (tab.dataset.target === "projects") {
+      showProjectBanner();
+    } else {
+      showBanner();
+    }
+  });
+});
+
   const slide = bannerSlides[currentBanner];
 
   bannerElement.style.backgroundImage = `
@@ -467,6 +513,14 @@ bannerSlides.forEach(slide => {
 showBanner();
 
 setInterval(() => {
+  const activeTab = document.querySelector(
+    'button.tab[aria-selected="true"]'
+  );
+
+  if (activeTab?.dataset.target === "projects") {
+    return;
+  }
+
   currentBanner = (currentBanner + 1) % bannerSlides.length;
   showBanner();
 }, 5000);
