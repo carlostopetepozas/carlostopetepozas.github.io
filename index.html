@@ -269,7 +269,23 @@ h1{
 .item:first-child{
   border-top: none;
 }
+.resource-link{
+  display: inline-block;
+  padding: 7px 12px;
 
+  background: var(--tab);
+  border-radius: 7px;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resource-link:hover{
+  background: var(--tabActive);
+  text-decoration: underline;
+}
 footer{
   margin-top: 30px;
   color: var(--muted2);
@@ -425,10 +441,36 @@ footer{
       <div class="item">Project name — short description.</div>
     </section>
 
-    <section class="panel" id="open">
-      <h2 class="section-title">Open-Science</h2>
-      <div class="item">Reproducible workflows and data transparency.</div>
-    </section>
+<section class="panel" id="open">
+  <h2 class="section-title">Open Science</h2>
+
+  <p>
+    Reproducible workflows and data transparency.
+  </p>
+
+  <div class="item">
+    <h3>
+      NAB Land Surface Phenology
+    </h3>
+
+    <p>
+      This repository contains data, figures, supporting materials,
+      and reproducible R scripts associated with the Land Surface
+      Phenology study of hurricane impacts across the North Atlantic Basin.
+    </p>
+
+    <p>
+      <a
+        class="resource-link"
+        href="https://github.com/carlostopetepozas/NAB-Land-Surface-Phenology"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View the GitHub repository
+      </a>
+    </p>
+  </div>
+</section>
 
     <section class="panel" id="data">
       <h2 class="section-title">Data</h2>
