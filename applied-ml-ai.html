@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Applied ML &amp; AI Projects | Carlos Topete Pozas</title>
+
+<meta
+  name="description"
+  content="Applied machine learning, deep learning, and artificial intelligence projects developed by Carlos Topete Pozas."
+>
+
+<link
+  rel="canonical"
+  href="https://carlostopetepozas.github.io/applied-ml-ai/"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+:root{
+  --bg: #f7f7f7;
+  --card: rgba(255,255,255,0.7);
+  --text: #171717;
+  --muted: #4a4a4a;
+  --muted2: #6b6b6b;
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 18px 45px rgba(0,0,0,0.08);
+  --tab: rgba(0,0,0,0.06);
+  --tabActive: rgba(0,0,0,0.10);
+  --link: #1a4f8b;
+  --maxw: 1100px;
+  --radius: 18px;
+}
+
+html,
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 30px 20px 100px;
+}
+
+/* Navigation */
+
+.tabs{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 40px;
+}
+
+.tab{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+  background: var(--tab);
+  border-radius: 12px;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.tab:hover,
+.tab.current{
+  background: var(--tabActive);
+}
+
+/* Page heading */
+
+.page-header{
+  margin-bottom: 30px;
+}
+
+.page-title{
+  margin: 0 0 8px;
+
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.2;
+}
+
+.page-intro{
+  max-width: 850px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* Projects */
+
+.projects-card{
+  padding: 30px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.project{
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+
+.project:first-child{
+  padding-top: 0;
+  border-top: none;
+}
+
+.project:last-child{
+  padding-bottom: 0;
+}
+
+.project-title{
+  margin: 0 0 4px;
+
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 25px;
+}
+
+.project-type{
+  margin: 0 0 12px;
+  color: var(--muted2);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-description{
+  margin: 0;
+  color: var(--muted);
+}
+
+.repository-link{
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 16px;
+
+  background: var(--text);
+  border-radius: 9px;
+
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.repository-link:hover{
+  opacity: 0.82;
+}
+
+footer{
+  margin-top: 30px;
+  color: var(--muted2);
+  font-size: 14px;
+}
+
+@media (max-width: 700px){
+  .projects-card{
+    padding: 22px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="wrap">
+
+  <nav class="tabs" aria-label="Primary navigation">
+
+    <a class="tab" href="/">
+      Home
+    </a>
+
+    <a class="tab" href="/publications/">
+      Publications
+    </a>
+
+    <a class="tab" href="/#projects">
+      Projects
+    </a>
+
+    <a class="tab" href="/#open">
+      Open-Science
+    </a>
+
+    <a class="tab" href="/#data">
+      Data
+    </a>
+
+    <a class="tab" href="/#archive">
+      Archive
+    </a>
+
+    <a
+      class="tab current"
+      href="/applied-ml-ai/"
+      aria-current="page"
+    >
+      Applied ML &amp; AI
+    </a>
+
+  </nav>
+
+  <header class="page-header">
+
+    <h1 class="page-title">
+      Applied Machine Learning and AI Projects
+    </h1>
+
+    <p class="page-intro">
+      Selected non-geospatial projects in data science, machine learning,
+      and deep learning, including capstone work completed through MIT
+      professional education.
+    </p>
+
+  </header>
+
+  <section class="projects-card">
+
+    <article class="project">
+
+      <h2 class="project-title">
+        Malaria Detection
+      </h2>
+
+      <p class="project-type">
+        Deep Learning Capstone Project
+      </p>
+
+      <p class="project-description">
+        A computer-vision project using deep-learning methods to classify
+        microscopic cell images and identify malaria-infected cells.
+      </p>
+
+    </article>
+
+    <article class="project">
+
+      <h2 class="project-title">
+        Boston Housing Price Prediction
+      </h2>
+
+      <p class="project-type">
+        Machine Learning Project
+      </p>
+
+      <p class="project-description">
+        A regression project applying machine-learning methods to analyze
+        housing characteristics and predict residential property values.
+      </p>
+
+    </article>
+
+  </section>
+
+  <a
+    class="repository-link"
+    href="https://github.com/carlostopetepozas/Applied-ML-AI-Projects"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View the Applied ML &amp; AI Projects repository
+  </a>
+
+  <footer>
+    © <span id="yr"></span> Carlos Topete Pozas
+  </footer>
+
+</main>
+
+<script>
+document.getElementById("yr").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
